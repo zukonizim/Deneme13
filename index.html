@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HACKED BY ZUKO</title>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      background: url('https://i.pinimg.com/originals/bd/7d/ac/bd7dacdb63391b40ab59de9ac65c6bbc.gif') center/cover no-repeat fixed;
+      font-family: 'Creepster', cursive;
+      overflow: hidden;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px 20px;
+      text-align: center;
+      user-select: none;
+    }
+
+    .glitch-text {
+      position: relative;
+      color: #FF3C3C;
+      font-size: 6vw;
+      text-shadow:
+        0 0 3px #FF3C3C,
+        0 0 6px #FF3C3C,
+        0 0 12px #FF3C3C;
+      animation: fadeInOut 4s forwards;
+    }
+
+    .glitch-text::before,
+    .glitch-text::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      clip: rect(0, 900px, 0, 0);
+    }
+
+    .glitch-text::before {
+      color: #F94BF4;
+      animation: glitchTop 0.8s infinite;
+    }
+
+    .glitch-text::after {
+      color: #FF3C3C;
+      animation: glitchBottom 0.8s infinite;
+    }
+
+    @keyframes glitchTop {
+      0% { clip: rect(0, 9999px, 0, 0); }
+      10% { clip: rect(0, 9999px, 30px, 0); transform: translateX(-3px); }
+      20% { clip: rect(0, 9999px, 10px, 0); transform: translateX(3px); }
+      30% { clip: rect(0, 9999px, 40px, 0); transform: translateX(-1px); }
+      100% { clip: rect(0, 9999px, 0, 0); transform: none; }
+    }
+
+    @keyframes glitchBottom {
+      0% { clip: rect(0, 9999px, 0, 0); }
+      10% { clip: rect(40px, 9999px, 100px, 0); transform: translateX(3px); }
+      20% { clip: rect(20px, 9999px, 90px, 0); transform: translateX(-3px); }
+      30% { clip: rect(10px, 9999px, 50px, 0); transform: translateX(2px); }
+      100% { clip: rect(0, 9999px, 0, 0); transform: none; }
+    }
+
+    @keyframes fadeInOut {
+      0% { opacity: 0; transform: scale(0.95); }
+      10% { opacity: 1; transform: scale(1); }
+      80% { opacity: 1; }
+      100% { opacity: 0; transform: scale(0.9); }
+    }
+
+    #glitchContainer {
+      margin-top: 20px;
+    }
+
+    .main-message {
+      font-size: 2vw;
+      max-width: 800px;
+      margin: 40px auto;
+      color: #FF3C3C;
+      text-shadow: 0 0 10px #FF3C3C;
+    }
+
+    .socials {
+      font-size: 1.2vw;
+      color: #FF3C3C;
+      margin-bottom: 20px;
+    }
+
+    .socials a {
+      color: #FF3C3C;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+
+    .socials a:hover {
+      color: #FFB3B3;
+    }
+
+    @media (max-width: 600px) {
+      .glitch-text {
+        font-size: 9vw;
+      }
+
+      .main-message {
+        font-size: 4vw;
+      }
+
+      .socials {
+        font-size: 3.5vw;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="glitchContainer" class="glitch-text" data-text="">HACKED</div>
+
+  <div class="main-message">
+    Bu sistem artık bize ait. Tüm kapılar açıldı, tüm maskeler düŞtü.<br />
+    Geri dönüs yok. Bizi durduramazsınız.<br />
+    ZUKO buradaydı, burada olacak...<br />
+  </div>
+
+  <div class="socials">
+    <a href="https://t.me/Zukonizim" target="_blank">Telegram</a> |
+    <a href="https://instagram.com/zuk8o" target="_blank">Instagram</a> |
+  </div>
+
+  <script>
+    const messages = [
+      "HACKED BY ZUKO",
+      "Z U K O",
+      "YAKALANDIN...",
+      "BİZİ UNUTMA"
+    ];
+
+    const container = document.getElementById("glitchContainer");
+    let index = 0;
+
+    function showNextMessage() {
+      const msg = messages[index % messages.length];
+      container.setAttribute("data-text", msg);
+      container.textContent = msg;
+      container.classList.remove("glitch-text");
+      void container.offsetWidth; // animasyonu resetlemek için
+      container.classList.add("glitch-text");
+      index++;
+    }
+
+    showNextMessage();
+    setInterval(showNextMessage, 4000);
+  </script>
+
+</body>
+</html>
+
